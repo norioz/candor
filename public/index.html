@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/kurento.png" type="image/png">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/demo-console/index.css">
+    <link rel="stylesheet" href="bower_components/ekko-lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="css/site.css">
+
+    <script src="bower_components/adapter.js/adapter.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/demo-console/index.js"></script>
+    <script src="bower_components/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+
+    <script src="bower_components/kurento-utils/js/kurento-utils.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <title>Candor One to Many</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
+	    <a class="navbar-brand" href=".">Kurento Tutorial</a>
+	  </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <ul class="nav navbar-nav navbar-right">
+	      <li>
+		<a href="https://github.com/Kurento/kurento-tutorial-node/tree/master/kurento-one2many-call">
+		  <span class="glyphicon glyphicon-file"></span> Source Code
+		</a>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="page-header">
+	<h1>Video Call 1 to N with WebRTC</h1>
+	<p>
+	  This web application consists of an one to many video call using WebRTC.
+	  This is an implementation of a video broadcasting application. The
+	  application has two types of users: a single peer that sends media
+	  (the <i>Presenter</i>) and N peers receiving the media of the <i>Presenter</i>
+	  (the <i>Viewers</i>). 1 WebRtcEndpoint is set in SendOnly mode, for the Presenter,
+	  and its stream is sent to N WebRtcEndpoints, for the N Viewers. Thus, the media
+	  pipeline is composed of N+1 interconnected <i>WebRtcEndpoints</i>.
+	</p>
+	<ol>
+	  <li>Open this page with a WebRTC compliant browser.</li>
+	  <li>
+	    If you would like to be the <i>Presenter</i>, click the <i>Presenter</i> button.
+	    Because there can only be one Presenter, if a Presenter is alerady present, an
+	    error is signalled to the console.
+	  </li>
+	  <li>
+	    Grant the access to the camera and mic. After the SDP negotiation, the feed
+	    should start.
+	  </li>
+	  <li>
+	    In a different browser instance, click the <i>Viewer</i> button to see the
+	    <i>Presenter's</i> stream.
+	  </li>
+	  <li>
+	    Click on the <i>Stop</i> button to end the feed. When the <i>Presenter</i>
+	    clicks on <i>Stop</i>, all <i>Viewers</i> end communication as well.
+	  </li>
+	</ol>
+      </div>
+      <div class="row">
+	<div class="col-md-5">
+	  <div class="row">
+	    <div class="col-md-12">
+	      <a id="call" href="#" class="btn btn-success">
+		<span class="glyphicon glyphicon-play"></span> Presenter</a>
+	      <a id="viewer" href="#" class="btn btn-primary">
+		<span class="glyphicon glyphicon-user"></span> Viewer</a>
+	      <a id="terminate" href="#" class="btn btn-danger">
+		<span class="glyphicon glyphicon-stop"></span> Stop</a>
+	    </div>
+	  </div>
+	  <br/>
+	  <label class="control-label" for="console">Console</label><br/><br/>
+	  <div id="console" class="democonsole">
+	    <ul></ul>
+	  </div>
+	</div>
+	<div class="col-md-7">
+	  <div id="videoBig">
+	    <video id="video" autoplay width="640px" height="480px" poster="img/webrtc.png"></video>
+	  </div>
+	</div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="foot-fixed-bottom">
+	<div class="container text-center">
+	  <hr/>
+	  <div class="row">&copy; 2018 eccentric</div>
+	  <div class="row">
+	    <div class="col-md-4">
+	      <a href="http://www.kurento.org">
+		<img src="img/kurento.png" alt="Kurento" height="50px"/>
+	      </a>
+	    </div>
+	    <div class="col-md-4">
+	      <a href="http://www.naevatec.com">
+		<img src="img/naevatec.png" alt="Naevatec" height="50px"/>
+	      </a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </footer>
+  </body>
+</html>
