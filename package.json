@@ -1,0 +1,23 @@
+{
+  "name": "candor",
+  "version": "1.0.0",
+  "description": "co-streaming application server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norioz/candor.git"
+  },
+  "keywords": [
+    "streaming",
+    "server"
+  ],
+  "author": "digdogger",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/norioz/candor/issues"
+  },
+  "homepage": "https://github.com/norioz/candor#readme"
+}
