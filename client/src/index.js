@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'webrtc-adapter';
@@ -146,12 +145,3 @@ function hideSpinner() {
 	arguments[i].style.background = '';
     }
 }
-
-// TODO Can remove and, perhaps, also get rid of JQuery
-
-// Lightbox utility
-// Displays media pipeline image in a modal dialog.
-$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-});
